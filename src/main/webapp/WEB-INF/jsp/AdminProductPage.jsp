@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
-</head>
+
 </head>
 <body style="margin-top: 100px">
 	<c:url var="addAction" value="addproduct"></c:url>
@@ -21,8 +21,8 @@
 			<div class="w3-container w3-third">
 				<form:form action="${addAction}" commandName="product" enctype="multipart/form-data" method="post">
 					<table class="w3-table w3-bordered w3-striped w3-card-4">
-						<tr class="w3-black"><hr>
-							<th colspan="2">Add Product</th>
+						<tr class="w3-black">
+							<br><th colspan="2">Add Product</th>
 						</tr>
 						<tr>
 							<td><form:label path="id">
@@ -66,7 +66,7 @@
 							</c:forEach>
 								</form:select></td>
 						</tr>
-					
+						
 						<tr>
 							<td><form:label path="image">
 									<spring:message text="Image" />
@@ -95,7 +95,7 @@
 				<c:if test="${!empty productList}">
 					<table class="w3-table w3-bordered w3-striped w3-card-4">
 						<tr class="w3-black">
-							<th>Product ID</th>
+						<br><th>Product ID</th>
 							<th>Product Name</th>
 							<th>Product Description</th>
 							<th>Product Price</th>
@@ -112,6 +112,7 @@
 								<td>${product.price}</td>
 								<td>${product.supplier}</td>
 								<td>${product.image}</td>
+								
 								
 								<td>
 									<form action="editproduct/${product.id}" method="post">

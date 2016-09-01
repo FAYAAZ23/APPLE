@@ -24,7 +24,7 @@ li {
 	margin: 0 auto;
 }
 
-</style>
+</style> 
 <meta charset="ISO-8859-1">
 <title>A P P L E</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,7 +75,7 @@ p {
 						<c:choose>	
 						<c:when test="${!Administrator}">	
 						<br><li style="float: right"><a href="viewcart"
-							class="w3-hover-none">ViewCart<i class="fa fa-shopping-cart"></i></a></li>
+							class="w3-hover-none">ViewCart<i class="fa fa-shopping-cart"></i>(${cartsize})</a></li>
 						</c:when>
 						</c:choose>
 
@@ -101,7 +101,7 @@ p {
 						class="w3-navbar w3-light-grey w3-round w3-small menu w3-card-4 "
 						Style="width: 70%; margin-left: 15%; margin-top:-2px;">
 						<c:forEach items="${categoryList}" var="category">
-							<li><a href="${category.name}" class="w3-hover-none"><i class="fa fa-list-alt" aria-hidden="true"></i> ${category.name}</a></li>
+							<li><a href="view/${category.id}" class="w3-hover-none"><i class="fa fa-list-alt" aria-hidden="true"></i> ${category.name}</a></li>
 						</c:forEach>
 						
 					</ul>
@@ -131,6 +131,12 @@ p {
 		<c:import url="/WEB-INF/jsp/cart.jsp">
 		</c:import>
 	</c:when>
+	
+	<c:when test="${IndividualItemClicked}">
+			<c:import url="/WEB-INF/jsp/IndividualItem.jsp">
+			</c:import>
+		</c:when>
+	
 	<c:when test="${IfPaymentClicked}">
 			<c:import url="/WEB-INF/jsp/Payment.jsp">
 			</c:import>
@@ -144,27 +150,38 @@ p {
 		<c:import url="/WEB-INF/jsp/Register.jsp">
 		</c:import>
 	</c:when>
+	
+	<c:when test="${ViewCategoryClicked}">
+			<c:import url="/WEB-INF/jsp/viewitem.jsp">
+			</c:import>
+		</c:when>
+	
+	
 	</c:choose>
 
 	<c:choose>
 			<c:when test="${ProductPageClicked}">
+			<body style="padding-top:">
 				<c:import url="/WEB-INF/jsp/AdminProductPage.jsp"></c:import>
 			</c:when>
 		</c:choose>
 		<c:choose>
 			<c:when test="${CategoryPageClicked}">
+			<body style="padding-top:">
 				<c:import url="/WEB-INF/jsp/AdminCategoryPage.jsp"></c:import>
 			</c:when>
 		</c:choose>
 		<c:choose>
 			<c:when test="${SupplierPageClicked}">
+			<body style="padding-top:">
 				<c:import url="/WEB-INF/jsp/AdminSupplierPage.jsp"></c:import>
 			</c:when>
 		</c:choose>
 	
 	<!-- carousel -->
 <br>	<c:choose>	
-		<c:when test="${!Administrator}">	
+		<c:when test="${!Administrator}">
+		<c:if test="${empty HideOthers}">	
 	<div>
 		<div id="carousel-home" class="carousel slide">
 			<!-- Indicators -->
@@ -239,6 +256,7 @@ p {
 			</a>
 		</div>
 	</div>
+	</c:if>
 	</c:when>
 	</c:choose>
 	<!-- Corousel End -->
@@ -255,7 +273,7 @@ p {
 							<c:forEach items="${productList}" var="product">
 								<div class="col-xs-2 ">
 									<div class="thumbnail">
-										<img height="600px" width="600px" alt="${product.id}"
+										<img height="450px" width="450px" alt="${product.id}"
 											src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>">
 										<div class="caption">
 											<p>
@@ -292,46 +310,6 @@ p {
 	
 	
 	
-		<!-- Product List-->
-	<%-- 	<c:if test="${empty HideOthers}">
-	<c:choose>	
-	<c:when test="${!Administrator}">	
-	<c:if test="${!empty productList}">
-		<div>
-			<ul>
-			<br>
-				<c:forEach items="${productList}" var="product">
-				<div class="col-xs-2 ">
-				<div class="thumbnail">
-					<li><a href=" ${product.name}" class="w3-hover-none"></a></li><hr><li><img height=100px; width=100px alt="${product.id}" src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>"></li>
-				<div class="caption">
-											<p>
-												${product.name}
-				<c:choose>
-					<c:when test="${LoggedIn}">	
-					<form action="addtoCart/${userId}/${product.id}">
-															<input type="number" value="1" name="quantity">
-															<input type="submit" value="AddtoCart" class="btn-xs col-1 btn-black">
-					
-					
-					</form>
-				</c:when>
-				</c:choose>
-				</p>
-				</div>
-				</div>
-				</div>
-				
-				</c:forEach>
-			</ul>
-			
-		</div>
-	</c:if>
-	</c:when>
-	</c:choose>
-	</c:if> --%>
-	
-	<!-- Product List End -->
 	
 
 	<footer class="footer-distributed w3-card-4 w3-white w3-margin-0"

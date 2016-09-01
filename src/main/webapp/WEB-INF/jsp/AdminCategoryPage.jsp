@@ -100,12 +100,13 @@
 				</form>
 				<br>
 				<table class="table table-bordered table-hover ">
+				
 					<thead>
 					
 					
-						<tr >
-						
-							<th>Category ID</th>
+					
+						<tr class="w3-black">
+						<br><th>Category ID</th>
 							<th>Category Name</th>
 							<th>Category Description</th>
 							<th>Edit</th>

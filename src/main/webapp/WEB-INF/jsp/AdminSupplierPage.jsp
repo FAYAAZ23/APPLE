@@ -23,8 +23,8 @@
 				<form:form action="${addAction}" commandName="supplier"
 					enctype="multipart/form-data" method="post">
 					<table class="w3-table w3-bordered w3-striped w3-card-4">
-						<tr class="w3-black"><hr>
-							<th colspan="2">Add Supplier</th>
+						<tr class="w3-black">
+							<br><th colspan="2">Add Supplier</th>
 						</tr>
 						<tr>
 							<td><form:label path="id">
@@ -82,7 +82,7 @@
 				<c:if test="${!empty supplierList}">
 					<table class="w3-table w3-bordered w3-striped w3-card-4">
 						<tr class="w3-black">
-							<th>Supplier ID</th>
+						<br><th>Supplier ID</th>
 							<th>Supplier Name</th>
 							<th>Supplier Address</th>
 							<th>Edit</th>

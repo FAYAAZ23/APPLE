@@ -12,7 +12,7 @@
 	rel="stylesheet">
 
 </head>
-<body style="padding-top: 60px">
+<body style="padding-top:">
 	<!-- <div class="container"> -->
 	<%-- <c:forEach items="${productList}" var="product">
 								<div class="col-xs-2 ">
@@ -43,8 +43,8 @@
 	<div class="container">
 		<c:forEach items="${productList}" var="product">
 			<div class="col-xs-3 ">
-				<div class="img">
-					<img height="192px" width="192px" class="img-rounded" alt="${product.id}"
+				<div class="img"><a href="IndividualItem/${product.id}">
+					<img height="450px" width="450px" class="img-rounded" alt="${product.id}"
 						src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>">
 					<div class="desc">
 						<p>
@@ -55,7 +55,7 @@
 										<input type="number" value="1" name="quantity"
 											class=" form-control  btn-block  "> <input
 											type="submit" value="Add to Cart"
-											class="btn btn-xs btn-success btn-block">
+											class="btn btn-xs btn-default btn-block">
 									</form>
 								</c:when>
 							</c:choose>

@@ -73,7 +73,15 @@ public class Product {
 	@Transient
 	private MultipartFile image;
 
-	
+	private String categoryid;
+
+	public String getCategoryid() {
+		return categoryid;
+	}
+
+	public void setCategoryid(String categoryid) {
+		this.categoryid = categoryid;
+	}
 	
 	
 

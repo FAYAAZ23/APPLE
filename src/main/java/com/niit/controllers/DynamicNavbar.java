@@ -30,13 +30,7 @@ public class DynamicNavbar {
 		return mv;
 	}
 
-	/*@RequestMapping("/Welcome")
-	public String UserHome(Model mv) {
-		mv.addAttribute("categoryList", categoryDAO.list());
-		mv.addAttribute("productList", productDAO.list());
-		return "Welcome";
-	}
-*/
+	
 
 	@RequestMapping("Welcomepage")
 	public String returnhome(Model mv) {
@@ -64,7 +58,14 @@ public class DynamicNavbar {
 		return "redirect:/Welcome";
 	}
 
-
+	@RequestMapping("IndividualItem/{id}")
+	public String IndividualItem(@PathVariable("id") int id,RedirectAttributes attributes)
+	{
+		attributes.addFlashAttribute("IndividualItemClicked", "true");
+		attributes.addFlashAttribute("IndividualProduct", productDAO.getindividual(id));
+		attributes.addFlashAttribute("HideOthers", "true");
+		return "redirect:/Welcome";
+	}
 
 
 }

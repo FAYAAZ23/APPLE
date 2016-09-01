@@ -7,7 +7,7 @@ header, footer, article, section, nav, aside { display: block; }
 body {
     font-family:Arial;
     font-size: 14px;
-    background:#ddd;
+    background:#ffffff;
 }
 
 .clearfix {
@@ -148,7 +148,7 @@ input.full {
 
 /* === Gradients === */
 .gr-visa {
-    background: #1db1cf; /* Old browsers */
+    background: #0080ff; /* Old browsers */
     background: -moz-linear-gradient(top,  #1db1cf 0%, #1078ab 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1db1cf), color-stop(100%,#1078ab)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #1db1cf 0%,#1078ab 100%); /* Chrome10+,Safari5.1+ */
