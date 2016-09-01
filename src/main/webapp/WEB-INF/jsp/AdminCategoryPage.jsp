@@ -42,13 +42,13 @@
 					<table class="w3-table w3-bordered w3-striped w3-card-4">
 					<br><tr class="w3-black"><th colspan="2" >Add Category</th></tr>
 						<tr>
-							<td><form:label path="id">
+							<%-- <td><form:label path="id">
 									<spring:message text="ID" />
-								</form:label></td>
+								</form:label></td> --%>
 							<c:choose>
 								<c:when test="${!empty category.id}">
-									<td><form:input path="id" readonly="true" />
-									</td>
+									<%-- <td><form:input path="id" readonly="true" />
+									</td> --%>
 								</c:when>
 								<c:otherwise>
 									<td><form:input path="id" pattern=".{2,10}"

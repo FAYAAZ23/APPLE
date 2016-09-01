@@ -47,7 +47,7 @@ public class AdminCategoryController {
 		return "redirect:/category";
 	}
 	@RequestMapping("editcategory/{id}")
-	public String editCategory(@PathVariable("id") String id, Model model) {
+	public String editCategory(@PathVariable("id") int id, Model model) {
 		System.out.println("editCategory");
 		model.addAttribute("category", this.categoryDAO.get(id));
 		model.addAttribute("categoryList", categoryDAO.list());
@@ -56,7 +56,7 @@ public class AdminCategoryController {
 		return "Welcome";
 	}
 	@RequestMapping(value = { "removecategory/{id}", "editcategory/removecategory/{id}" })
-	public String removeCategory(@PathVariable("id") String id,RedirectAttributes attributes) throws Exception {
+	public String removeCategory(@PathVariable("id") int id,RedirectAttributes attributes) throws Exception {
 		categoryDAO.delete(id);
 		attributes.addFlashAttribute("DeleteMessage", "Category has been deleted Successfully");
 		return "redirect:/category";

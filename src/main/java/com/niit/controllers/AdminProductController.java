@@ -82,7 +82,7 @@ public class AdminProductController {
 	}
 
 	@RequestMapping("editproduct/{id}")
-	public String editProduct(@PathVariable("id") String id, Model model) {
+	public String editProduct(@PathVariable("id") int id, Model model) {
 		System.out.println("editProduct");
 		model.addAttribute("product", this.productDAO.get(id));
 		model.addAttribute("productList", productDAO.list());
@@ -94,7 +94,7 @@ public class AdminProductController {
 	}
 
 	@RequestMapping(value = { "removeproduct/{id}", "editproduct/removeproduct/{id}" })
-	public String removeproduct(@PathVariable("id") String id, Model model,HttpServletRequest request,RedirectAttributes attributes) throws Exception {
+	public String removeproduct(@PathVariable("id") int id, Model model,HttpServletRequest request,RedirectAttributes attributes) throws Exception {
 		attributes.addFlashAttribute("DeleteMessage", "Product has been deleted Successfully");
 		productDAO.delete(id);
 		model.addAttribute("message", "Successfully Deleted");

@@ -47,8 +47,8 @@ public class DynamicNavbar {
 		session.setAttribute("productList", productDAO.list());
 		return mv;
 	}
-	@RequestMapping("view/{category}")
-	public String view(@PathVariable("category") int categoryid,RedirectAttributes attributes)
+	@RequestMapping("view/{categoryid}")
+	public String view(@PathVariable("categoryid") int categoryid,RedirectAttributes attributes)
 	{
 		attributes.addFlashAttribute("productList",productDAO.getcatitem(categoryid));
 		attributes.addFlashAttribute("ViewCategoryClicked", "true");

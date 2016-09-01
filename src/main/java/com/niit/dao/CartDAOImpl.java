@@ -102,4 +102,10 @@ public class CartDAOImpl implements CartDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.executeUpdate();
 	}
+	@Override
+	public Cart getitem(int productid, int userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

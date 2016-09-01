@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>EKART Admin</title>
+<title>APPLE Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/bootstrap-theme.min.css" />" rel="stylesheet">
@@ -22,7 +22,7 @@
 <nav>
 		<ul class="w3-navbar w3-large w3-card-4 w3-dark-grey w3-left-align ">
 			<li><a  href="#"<i class="fa fa-home"></i>>
-					E K A R T </a></li>
+					A P P L E </a></li>
 			<li class="w3-hide-small" style="float: right"><a href="#"><i
 					class="fa fa-sign-out"></i> Sign Out</a></li>	
 		</ul>

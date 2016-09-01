@@ -52,7 +52,7 @@ public class AdminSupplierController {
 	}
 
 	@RequestMapping("editsupplier/{id}")
-	public String editSupplier(@PathVariable("id") String id, Model model) {
+	public String editSupplier(@PathVariable("id") int id, Model model) {
 		System.out.println("editSupplier");
 		model.addAttribute("supplier", this.supplierDAO.get(id));
 		model.addAttribute("supplierList", supplierDAO.list());
@@ -62,7 +62,7 @@ public class AdminSupplierController {
 	}
 
 	@RequestMapping(value = { "removesupplier/{id}" })
-	public String removeSupplier(@PathVariable("id") String id, HttpServletRequest request,RedirectAttributes attributes) throws Exception {
+	public String removeSupplier(@PathVariable("id") int id, HttpServletRequest request,RedirectAttributes attributes) throws Exception {
 		supplierDAO.delete(id);
 		attributes.addFlashAttribute("DeleteMessage", "Supplier has been deleted Successfully");
 		return "redirect:/supplier";

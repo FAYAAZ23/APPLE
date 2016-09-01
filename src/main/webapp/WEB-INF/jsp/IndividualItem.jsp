@@ -54,7 +54,7 @@
 											class=" form-control  btn-block  "> 
 											<br><input
 											type="submit" value="Add to Cart"
-											class="btn btn-xs btn-success btn-block">
+											class="btn btn-xs btn-default btn-block">
 									</form>
 								</c:when>
 							</c:choose>

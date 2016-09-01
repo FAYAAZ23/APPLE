@@ -27,12 +27,12 @@
 							<br><th colspan="2">Add Supplier</th>
 						</tr>
 						<tr>
-							<td><form:label path="id">
-									<spring:message text="ID" />
-								</form:label></td>
+							 <%-- <td><form:label path="id">
+									<spring:message text="ID" /> 
+								</form:label></td> --%>
 							<c:choose>
 								<c:when test="${!empty supplier.id}">
-									<td><form:input path="id" readonly="true" /></td>
+									<%-- <td><form:input path="id" readonly="true" /></td> --%>
 								</c:when>
 
 								<c:otherwise>
@@ -52,12 +52,12 @@
 								</form:label></td>
 							<td><form:input path="address" required="true" /></td>
 						</tr>
-						<tr>
+						<%-- <tr>
 							<td><form:label path="image">
 									<spring:message text="Image" />
 								</form:label></td>
 							<td><form:input type="file" path="image" /></td>
-						</tr>
+						</tr> --%>
 						<tr>
 							<td colspan="2"><c:if test="${!empty supplier.name}">
 									<input type="submit" class="w3-btn w3-black"
